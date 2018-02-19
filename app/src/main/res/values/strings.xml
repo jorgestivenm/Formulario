@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Sesion2</string>
+    <string name="titulo">Formulario</string>
+    <string name="nombre">Nombre</string>
+    <string name="correo">Correo</string>
+    <string name="guardar">Guardar</string>
+    <string name="femenino">Femenino</string>
+    <string name="masculino">Masculino</string>
+    <string name="cine">Cine</string>
+    <string name="Gimnasio">Gimnasio</string>
+    <string name="Nadar">Nadar</string>
+    <string name="pasatiempos">Pasatiempos</string>
+    <string name="genero">Genero</string>
+    <string name="Ciclismo">Ciclismo</string>
+    <string name="formato_fecha">dd/mm/yyyy</string>
+    <string name="fecha">Fecha de Nacimiento</string>
+</resources>
