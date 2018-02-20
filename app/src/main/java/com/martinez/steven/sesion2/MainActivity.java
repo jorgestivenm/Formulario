@@ -180,33 +180,33 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             if (eNombre.toString() != "" && elogin.toString() != "" && epass1.toString() != ""&&
                     epass2.toString() != "" && eCorreo.toString() != ""&& sexo != ""){
+                list =new ArrayList<String>();
+                list.add("User Name:" + elogin.getText().toString());
                 if (epass1.toString() != epass2.toString()) {
                     Toast toast = Toast.makeText(getApplicationContext(), "Verifique el password, no concuerda", Toast.LENGTH_SHORT);
                     toast.show();
                     flag= 1;
                 } else {
                     flag = 0;
+                    list.add("Password:" + epass1.getText().toString());
                 }
                 if (ciudad.toString() == "Select" || ciudad.toString() == "" ) {
                     Toast toast = Toast.makeText(getApplicationContext(), "Selecione la ciudad de nacimiento", Toast.LENGTH_SHORT);
                     toast.show();
                     flag = 1;
                 }
+                list.add("Nombre:" + eNombre.getText().toString());
+                list.add("Correo:" + eCorreo.getText().toString());
+                list.add(sexo);
+                list.add("Fecha de Nacimiento:" + etFecha.getText().toString());
+                list.add("Ciudad:" + ciudad);
+                list.add(data);
                 if (flag == 0);{
                     eshow_info.setEnabled(true);
-                    list =new ArrayList<String>();
-                    list.add("User Name:" + elogin.getText().toString());
-                    list.add("Password:" + epass1.getText().toString());
-                    list.add("Nombre:" + eNombre.getText().toString());
-                    list.add("Correo:" + eCorreo.getText().toString());
-                    list.add(sexo);
-                    list.add("Fecha de Nacimiento:" + etFecha.getText().toString());
-                    list.add("Ciudad:" + ciudad);
-                    list.add(data);
                     eshow_info.setText(list.toString());
+                    eshow_info.setEnabled(false);
                     list =new ArrayList<String>();
                     data = "";
-                    eshow_info.setEnabled(false);
                 }
             }
 
