@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Geometria</string>
+    <string name="Titulo">Calculador de Areas, Perimetros y Volumenes</string>
+    <string name="Cuadro">Cuadro</string>
+    <string name="Circulo">Circulo</string>
+    <string name="Triangulo">Triangulo</string>
+    <string name="Cubo">Cubo</string>
+    <string name="Select_fig">Selecciona la figura</string>
+    <string name="Datos">Ingrese los datos</string>
+    <string name="lado">Lado</string>
+    <string name="radio">Radio</string>
+    <string name="altura">Altura</string>
+    <string name="base">Base</string>
+    <string name="resultado">Resultados</string>
+    <string name="calcular">Calcular</string>
+</resources>

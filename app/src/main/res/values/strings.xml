@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Sesion2</string>
+    <string name="app_name">Formulario</string>
     <string name="titulo">Formulario</string>
     <string name="nombre">Nombre</string>
     <string name="correo">Correo</string>

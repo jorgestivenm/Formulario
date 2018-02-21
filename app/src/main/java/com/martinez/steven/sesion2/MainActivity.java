@@ -5,6 +5,7 @@ import android.app.Dialog;
 import android.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -27,7 +28,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private EditText eCorreo, eNombre, elogin, epass1, epass2, eshow_info, etFecha;
     //private Button bGuardar;
     private CheckBox cCine, cNadar, cGym, cBike;
-    private String nombre, correo, ciudad, sexo, data="", fecha ="";
+    private String nombre, correo, ciudad, sexo = "", data="", pass1 ="", pass2 = "";
     private List<String> list = new ArrayList<String>();
     private Spinner spinner;
     private ImageButton ibObtenerFecha;
@@ -157,7 +158,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 //Formateo el mes obtenido: antepone el 0 si son menores de 10
                 String mesFormateado = (mesActual < 10)? CERO + String.valueOf(mesActual):String.valueOf(mesActual);
                 //Muestro la fecha con el formato deseado
-                etFecha.setText(diaFormateado + BARRA + mesFormateado + BARRA + year);
+                etFecha.setText((diaFormateado + BARRA + mesFormateado + BARRA + year));
 
 
             }
@@ -178,41 +179,63 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         eshow_info.setEnabled(false);
         if (id == R.id.bGuardar) {
 
-            if (eNombre.toString() != "" && elogin.toString() != "" && epass1.toString() != ""&&
-                    epass2.toString() != "" && eCorreo.toString() != ""&& sexo != ""){
+            if (!eNombre.getText().toString().isEmpty() && !elogin.getText().toString().isEmpty() && !epass1.getText().toString().isEmpty() &&
+                    !epass2.getText().toString().isEmpty() && !eCorreo.getText().toString().isEmpty()  && !sexo.equals("")){
+
                 list =new ArrayList<String>();
                 list.add("User Name:" + elogin.getText().toString());
-                if (epass1.toString() != epass2.toString()) {
-                    Toast toast = Toast.makeText(getApplicationContext(), "Verifique el password, no concuerda", Toast.LENGTH_SHORT);
-                    toast.show();
+                pass1 = epass1.getText().toString();
+                pass2 = epass2.getText().toString();
+
+                if (!pass1.equals(pass2)) {
+                    eshow_info.setText("Passwords Incorrectos");
                     flag= 1;
                 } else {
                     flag = 0;
-                    list.add("Password:" + epass1.getText().toString());
+                    list.add("Password:" + pass1);
+
+                    list.add("Nombre:" + eNombre.getText().toString());
+                    list.add("Correo:" + eCorreo.getText().toString());
+                    list.add(sexo);
+                    if (etFecha.getText().toString().isEmpty() || etFecha.getText().toString().equals("") ){
+                        eshow_info.setText("Verificar el campos Fecha");
+                        flag = 1;
+                    }else {
+                        list.add("Fecha de Nacimiento:" + etFecha.getText().toString());
+                        flag = 0;
+                        if (ciudad.equals("Select") || ciudad.equals("")) {
+                            eshow_info.setText("Selecione una ciudad");
+                            flag = 1;
+                        }else{
+                            list.add("Ciudad:" + ciudad);
+                            flag = 0;
+                            if(data.equals("")){
+                                eshow_info.setText("Verificar los campos Pasatiempos");
+                                flag = 1;
+                                data = "";
+                            }else {
+                                list.add(data);
+                                a=b=e=d=0;
+                                flag = 0;
+                            }
+                        }
+                    }
                 }
-                if (ciudad.toString() == "Select" || ciudad.toString() == "" ) {
-                    Toast toast = Toast.makeText(getApplicationContext(), "Selecione la ciudad de nacimiento", Toast.LENGTH_SHORT);
-                    toast.show();
-                    flag = 1;
-                }
-                list.add("Nombre:" + eNombre.getText().toString());
-                list.add("Correo:" + eCorreo.getText().toString());
-                list.add(sexo);
-                list.add("Fecha de Nacimiento:" + etFecha.getText().toString());
-                list.add("Ciudad:" + ciudad);
-                list.add(data);
-                if (flag == 0);{
+
+                if (flag == 0){
                     eshow_info.setEnabled(true);
                     eshow_info.setText(list.toString());
                     eshow_info.setEnabled(false);
                     list =new ArrayList<String>();
-                    data = "";
+                    //data = "";
                 }
+            }else{
+                eshow_info.setText("Verificar los campos vacios");
             }
 
         }
     }
-    //version 3.0
+    //version 4.0
 
 }
 
