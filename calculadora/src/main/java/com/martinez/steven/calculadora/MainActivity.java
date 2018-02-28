@@ -151,10 +151,20 @@ public class MainActivity extends AppCompatActivity {
                 }
                 break;
             case R.id.berase:
-                int m = Math.max(0, data.length() - 1);
-                char[] cs = data.toCharArray();
-                data = new String(cs, 0, m);
-                resultado.setText(data);
+                if (!data.equals("")) {
+                    int m = Math.max(0, data.length() - 1);
+                    char[] cs = data.toCharArray();
+                    data = new String(cs, 0, m);
+                    resultado.setText(data);
+                    break;
+                }else{
+                    data = "";
+                    data2 = "";
+                    value1 = 0.0;
+                    value2 = 0.0;
+                    flag = 0;
+                    resultado.setText("");
+                }
                 break;
             case R.id.bequal:
                 operacion();

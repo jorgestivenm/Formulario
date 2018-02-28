@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/calculadora/calculadora.iml" filepath="$PROJECT_DIR$/calculadora/calculadora.iml" />
       <module fileurl="file://$PROJECT_DIR$/geometria/geometria.iml" filepath="$PROJECT_DIR$/geometria/geometria.iml" />
+      <module fileurl="file://$PROJECT_DIR$/resistor/resistor.iml" filepath="$PROJECT_DIR$/resistor/resistor.iml" />
     </modules>
   </component>
 </project>

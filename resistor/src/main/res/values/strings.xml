@@ -1,0 +1,54 @@
+<resources>
+    <string name="app_name">Resistor</string>
+    <string name="band1">Banda 1</string>
+    <string name="band2">Banda 2</string>
+    <string name="multi">Multiplucador</string>
+    <string name="calc">Valor del Resistor</string>
+    <string name="select_band">Selecciona color para cada banda</string>
+    <string name="select_tol">Seleccione la tolerancia</string>
+    <string name="Uno">1%</string>
+    <string name="Dos">2%</string>
+    <string name="Cinco">5%</string>
+    <string name="Diez">10%</string>
+
+    <string-array name="band_3">
+        <item>Select</item>
+        <item>Negro</item>
+        <item>Cafe</item>
+        <item>Rojo</item>
+        <item>Naranja</item>
+        <item>Amarillo</item>
+        <item>Verde</item>
+        <item>Azul</item>
+        <item>Dorado</item>
+        <item>Plateado</item>
+    </string-array>
+
+    <string-array name="band_1">
+        <item>Select</item>
+        <item>Negro</item>
+        <item>Cafe</item>
+        <item>Rojo</item>
+        <item>Naranja</item>
+        <item>Amarillo</item>
+        <item>Verde</item>
+        <item>Azul</item>
+        <item>Violeta</item>
+        <item>Gris</item>
+        <item>Blanco</item>
+    </string-array>
+
+    <string-array name="band_2">
+        <item>Select</item>
+        <item>Negro</item>
+        <item>Cafe</item>
+        <item>Rojo</item>
+        <item>Naranja</item>
+        <item>Amarillo</item>
+        <item>Verde</item>
+        <item>Azul</item>
+        <item>Violeta</item>
+        <item>Gris</item>
+        <item>Blanco</item>
+    </string-array>
+</resources>

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.martinez.steven.resistor.MainActivity"
+    android:orientation="vertical"
+    android:background="@drawable/background_3">
+
+    <ImageButton
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:layout_margin="10dp"
+        android:background="@drawable/colorcode"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        android:text="@string/select_band"
+        android:textColor="@color/red"
+        android:gravity="center"
+        android:background="@android:color/transparent"
+        android:textSize="20sp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/band1"
+                android:textSize="15sp"
+                android:background="@android:color/transparent"
+                android:textColor="@color/black"
+                />
+
+            <Spinner
+                android:id="@+id/spinner_band1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/band2"
+                android:textSize="15sp"
+                android:background="@android:color/transparent"
+                android:textColor="@color/black"
+                />
+
+            <Spinner
+                android:id="@+id/spinner_band2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center" >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/multi"
+                android:textSize="15sp"
+                android:background="@android:color/transparent"
+                android:textColor="@color/black"
+                />
+
+            <Spinner
+                android:id="@+id/spinner_multi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        android:textColor="@color/red"
+        android:text="@string/select_tol"
+        android:gravity="center"
+        android:background="@android:color/transparent"
+        android:textSize="20sp"/>
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/runo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/Uno"
+            android:background="@color/maroon"
+            android:onClick="onRadioButtonClicked"
+            />
+        <RadioButton
+            android:id="@+id/rdos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/Dos"
+            android:background="@color/red"
+            android:onClick="onRadioButtonClicked"
+            tools:ignore="OnClick" />
+
+        <RadioButton android:id="@+id/rcinco"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/Cinco"
+            android:background="@color/gold"
+            android:onClick="onRadioButtonClicked"
+            />
+        <RadioButton android:id="@+id/rdiez"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/Diez"
+            android:background="@color/silver"
+            android:onClick="onRadioButtonClicked"
+            />
+
+    </RadioGroup>
+    <Button
+        android:id="@+id/bcalc"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        android:text="@string/calc"
+        android:layout_gravity="center"
+        android:background="@color/blueviolet"
+        android:onClick="calculo_valor"
+        />
+    <EditText
+        android:id="@+id/eresult"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:textColor="@color/blue"
+        android:enabled="false"
+        android:background="@android:color/transparent"
+        />
+
+</LinearLayout>
