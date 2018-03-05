@@ -104,50 +104,58 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.bpor:
                 data2  = "*";
-                if (flag == 0){
-                    value1 = Double.parseDouble( resultado.getText().toString().replace(",",".") );
-                    data = "";
-                    flag = 1;
-                    resultado.setText("");
-                }else {
-                    value2 = Double.parseDouble( resultado.getText().toString().replace(",",".") );
-                    data = "";
+                if(!resultado.getText().toString().isEmpty()){
+                    if (flag == 0 ){
+                        value1 = Double.parseDouble( resultado.getText().toString().replace(",",".") );
+                        data = "";
+                        flag = 1;
+                        resultado.setText("");
+                    }else {
+                        value2 = Double.parseDouble( resultado.getText().toString().replace(",",".") );
+                        data = "";
+                    }
                 }
                 break;
             case R.id.bdiv:
                 data2 = "/";
-                if (flag == 0){
-                    value1 = Double.parseDouble( resultado.getText().toString().replace(",",".") );
-                    data = "";
-                    flag = 1;
-                    resultado.setText("");
-                }else {
-                    value2 = Double.parseDouble( resultado.getText().toString().replace(",",".") );
-                    data = "";
+                if(!resultado.getText().toString().isEmpty()) {
+                    if (flag == 0) {
+                        value1 = Double.parseDouble(resultado.getText().toString().replace(",", "."));
+                        data = "";
+                        flag = 1;
+                        resultado.setText("");
+                    } else {
+                        value2 = Double.parseDouble(resultado.getText().toString().replace(",", "."));
+                        data = "";
+                    }
                 }
                 break;
             case R.id.bminus:
                 data2 = "-";
-                if (flag == 0) {
-                    value1 = Double.parseDouble(resultado.getText().toString().replace(",", "."));
-                    data = "";
-                    flag = 1;
-                    resultado.setText("");
-                }else {
-                    value2 = Double.parseDouble( resultado.getText().toString().replace(",",".") );
-                    data = "";
+                if(!resultado.getText().toString().isEmpty()) {
+                    if (flag == 0) {
+                        value1 = Double.parseDouble(resultado.getText().toString().replace(",", "."));
+                        data = "";
+                        flag = 1;
+                        resultado.setText("");
+                    } else {
+                        value2 = Double.parseDouble(resultado.getText().toString().replace(",", "."));
+                        data = "";
+                    }
                 }
                 break;
             case R.id.badd:
                 data2 = "+";
-                if (flag == 0){
-                    value1 = Double.parseDouble( resultado.getText().toString().replace(",",".") );
-                    data = "";
-                    flag = 1;
-                    resultado.setText("");
-                }else {
-                    value2 = Double.parseDouble( resultado.getText().toString().replace(",",".") );
-                    data = "";
+                if(!resultado.getText().toString().isEmpty()) {
+                    if (flag == 0) {
+                        value1 = Double.parseDouble(resultado.getText().toString().replace(",", "."));
+                        data = "";
+                        flag = 1;
+                        resultado.setText("");
+                    } else {
+                        value2 = Double.parseDouble(resultado.getText().toString().replace(",", "."));
+                        data = "";
+                    }
                 }
                 break;
             case R.id.berase:
@@ -167,7 +175,9 @@ public class MainActivity extends AppCompatActivity {
                 }
                 break;
             case R.id.bequal:
-                operacion();
+                if(!resultado.getText().toString().isEmpty()) {
+                    operacion();
+                }
                 break;
 
 

@@ -118,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void calculo_valor(View view) {
         if (banda1.equals("Select") || banda1.equals("") || banda2.equals("Select") || banda2.equals("") || banda3.equals("Select") || banda3.equals("") || tol.equals("")) {
-            eresult.setText("Selecione alguno de los campos qe no ha llenado");
+            eresult.setText("Selecione algúno de los campos qe no ha llenado");
         } else {
             if (banda1.equals("Negro")) {
                 band1 = 0;

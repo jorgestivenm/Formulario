@@ -74,27 +74,47 @@ public class MainActivity extends AppCompatActivity {
         eresult.setEnabled(true);
         if (id == R.id.bcalcular){
             if (figura.equals("cuadro")){
-                lado  = Integer.valueOf(elado.getText().toString());
-                area =lado * lado;
-                perimetro = 4*lado;
-                eresult.setText(("El Area es:" + String.valueOf(area) + "El Perimetro es:" + String.valueOf(perimetro)));
+                if (elado.getText().toString().isEmpty()){
+                    eresult.setText(("Complete los campos vacios"));
+                }else{
+                    lado  = Integer.valueOf(elado.getText().toString());
+
+                    area =lado * lado;
+                    perimetro = 4*lado;
+                    eresult.setText(("El Area es:" + String.valueOf(area) + "El Perimetro es:" + String.valueOf(perimetro)));
+                }
             }else if (figura.equals("circulo")){
-                radio = Integer.valueOf(eradio.getText().toString());
-                perimetro = 2* PI *radio;
-                area = PI * radio* radio;
-                eresult.setText(("El Area es:" + String.valueOf(area) + "El Perimetro es:" + String.valueOf(perimetro)));
+
+                if (eradio.getText().toString().isEmpty()){
+                    eresult.setText(("Complete los campos vacios"));
+                }else {
+                    radio = Integer.valueOf(eradio.getText().toString());
+                    perimetro = 2 * PI * radio;
+                    area = PI * radio * radio;
+                    eresult.setText(("El Area es:" + String.valueOf(area) + "El Perimetro es:" + String.valueOf(perimetro)));
+                }
             }else if (figura.equals("triangulo")){
-                base = Integer.valueOf(ebase.getText().toString());
-                altura = Integer.valueOf(ealtura.getText().toString());
-                perimetro = base+altura+ Math.pow((base*base+altura*altura),0.5);
-                area = ( base* altura)/2;
-                eresult.setText(("El Area es:" + String.valueOf(area) + "El Perimetro es:" + String.valueOf(perimetro)));
-            }else if(figura.equals("cubo")){
-                lado  = Integer.valueOf(elado.getText().toString());
-                area =lado * lado;
-                perimetro = 12*lado;
-                volumen = lado * lado * lado;
-                eresult.setText(("El Area es:" + String.valueOf(area) + "El Perimetro es:" + String.valueOf(perimetro) + "El Volumen es:" + String.valueOf(volumen)));
+
+                if (ebase.getText().toString().isEmpty() || ealtura.getText().toString().isEmpty()){
+                    eresult.setText(("Complete los campos vacios"));
+                }else {
+                    base = Integer.valueOf(ebase.getText().toString());
+                    altura = Integer.valueOf(ealtura.getText().toString());
+                    perimetro = base + altura + Math.pow((base * base + altura * altura), 0.5);
+                    area = (base * altura) / 2;
+                    eresult.setText(("El Area es:" + String.valueOf(area) + "El Perimetro es:" + String.valueOf(perimetro)));
+                }
+            }else if(figura.equals("cubo")) {
+
+                if (elado.getText().toString().isEmpty()) {
+                    eresult.setText(("Complete los campos vacios"));
+                } else {
+                    lado = Integer.valueOf(elado.getText().toString());
+                    area = lado * lado;
+                    perimetro = 12 * lado;
+                    volumen = lado * lado * lado;
+                    eresult.setText(("El Area es:" + String.valueOf(area) + "El Perimetro es:" + String.valueOf(perimetro) + "El Volumen es:" + String.valueOf(volumen)));
+                }
             }
             eresult.setEnabled(false);
         }
